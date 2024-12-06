@@ -1,0 +1,172 @@
+/* General Body Styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  background: linear-gradient(to bottom, #ffd1dc, #ffb6c1);
+  overflow: hidden;
+}
+
+/* Container Styling */
+.container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+/* Banner Styling */
+.banner img {
+  width: 80%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+/* Floating Clouds */
+.cloud {
+  position: absolute;
+  opacity: 0.8;
+  width: 15vw;
+  animation: float 60s linear infinite;
+}
+
+.cloud1 {
+  top: 5%;
+  left: -20%;
+  animation-delay: 0s;
+}
+
+.cloud2 {
+  top: 40%;
+  right: -25%;
+  animation-delay: 5s;
+}
+
+.cloud3 {
+  bottom: 10%;
+  left: -15%;
+  animation-delay: 10s;
+}
+
+@keyframes float {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(1000%);
+  }
+}
+
+/* Birthday Message */
+h1 {
+  font-size: 2rem;
+  color: #ff4081;
+  text-shadow: 2px 2px 8px #ffffff;
+}
+
+/* Play/Pause Button */
+#music-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #ff4081;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  margin-top: 20px;
+}
+
+#music-button:hover {
+  background-color: #e91e63;
+}
+
+/* Hearts Animation */
+#hearts-container {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.heart {
+  width: 40px; /* Increased size */
+  height: 40px; /* Increased size */
+  position: absolute;
+  background-color: #ff4081;
+  transform: rotate(45deg);
+  animation: floatHearts 5s linear infinite;
+}
+
+.heart::after,
+.heart::before {
+  content: '';
+  width: 40px; /* Increased size */
+  height: 40px; /* Increased size */
+  background-color: #ff4081;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -20px; /* Adjusted position for larger size */
+  left: 0;
+}
+
+.heart::after {
+  top: 0;
+  left: -20px; /* Adjusted position for larger size */
+}
+
+@keyframes floatHearts {
+  0% {
+    transform: translateY(100vh) rotate(45deg) scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh) rotate(45deg) scale(1.5);
+    opacity: 0;
+  }
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .banner img {
+    width: 90%;
+  }
+
+  .cloud {
+    width: 20vw;
+  }
+
+  #music-button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  .cloud {
+    width: 25vw;
+  }
+
+  #music-button {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+}
