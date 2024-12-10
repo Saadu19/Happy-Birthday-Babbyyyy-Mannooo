@@ -93,37 +93,40 @@ h1 {
 /* Floating Clouds */
 .cloud {
   position: absolute;
+  width: 15vw;  /* You can adjust the cloud size */
   opacity: 0.8;
-  width: 15vw;
-  animation: float 20s linear infinite;
+  animation: float 30s linear infinite;
+  z-index: 1;   /* Ensures clouds stay above the background */
+  pointer-events: none;  /* Avoids interaction issues */
 }
 
 .cloud1 {
-  top: 5%;
-  left: -20%;
+  top: 10%;
+  left: -20%;   /* Start off-screen on the left */
   animation-delay: 0s;
 }
 
 .cloud2 {
-  top: 40%;
-  left: -20%;
-  animation-delay: 5s;
+  top: 50%;
+  left: -20%;  /* Start off-screen on the right */
+  animation-delay: 4s;
 }
 
 .cloud3 {
-  bottom: -10%;
-  left: -20%;
-  animation-delay: 10s;
+  bottom: -5%;
+  left: -20%;   /* Start off-screen on the left */
+  animation-delay: 8s;
 }
 
 @keyframes float {
-  from {
-    transform: translateX(0);
+  0% {
+    transform: translateX(0);  /* Start at the left side */
   }
-  to {
-    transform: translateX(1000%);
+  100% {
+    transform: translateX(100vw);  /* Move to the right side */
   }
 }
+
 
 /* Hearts Animation */
 #hearts-container {
