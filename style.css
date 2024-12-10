@@ -95,7 +95,7 @@ h1 {
   position: absolute;
   opacity: 0.8;
   width: 15vw;
-  animation: float 60s linear infinite;
+  animation: float 20s linear infinite;
 }
 
 .cloud1 {
@@ -106,13 +106,13 @@ h1 {
 
 .cloud2 {
   top: 40%;
-  right: -25%;
+  left: -20%;
   animation-delay: 5s;
 }
 
 .cloud3 {
-  bottom: 10%;
-  left: -15%;
+  bottom: -10%;
+  left: -20%;
   animation-delay: 10s;
 }
 
